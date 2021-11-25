@@ -1,0 +1,15 @@
+<%= form_with model: @game do |f| %> 
+
+     <p>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </p>
+     <p>
+        <%# <%= f.label :genre_id %>
+        <%# <%= f.collection_select :genre_id, @genres, :id, :thegenres %>
+    </p>
+   <p>
+        <%= f.submit caption %>
+    </p>
+    
+    <% end %>

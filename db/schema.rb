@@ -10,40 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_25_075425) do
+ActiveRecord::Schema.define(version: 2021_11_25_085549) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "game_genres", force: :cascade do |t|
+    t.bigint "game_id", null: false
+    t.bigint "genre_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "games_id", null: false
-    t.bigint "genres_id", null: false
-    t.index ["games_id"], name: "index_game_genres_on_games_id"
-    t.index ["genres_id"], name: "index_game_genres_on_genres_id"
+    t.index ["game_id"], name: "index_game_genres_on_game_id"
+    t.index ["genre_id"], name: "index_game_genres_on_genre_id"
   end
 
   create_table "games", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
-    t.bigint "genre_id", null: false
-    t.index ["genre_id"], name: "index_games_on_genre_id"
   end
 
   create_table "genres", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "genre"
+    t.string "genrename"
   end
 
   create_table "listings", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "price"
-    t.bigint "games_id", null: false
-    t.index ["games_id"], name: "index_listings_on_games_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -58,8 +54,6 @@ ActiveRecord::Schema.define(version: 2021_11_25_075425) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "game_genres", "games", column: "games_id"
-  add_foreign_key "game_genres", "genres", column: "genres_id"
-  add_foreign_key "games", "genres"
-  add_foreign_key "listings", "games", column: "games_id"
+  add_foreign_key "game_genres", "games"
+  add_foreign_key "game_genres", "genres"
 end
