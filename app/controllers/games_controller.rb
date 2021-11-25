@@ -12,7 +12,7 @@ class GameController < ApplicationController
           end
 
     def game_params
-        params.require(:name).permit(genre_ids: [])
+        params.require(:name).permit(genre_id: [])
 
     end
     def set_genres
@@ -23,7 +23,7 @@ class GameController < ApplicationController
         @game.update(game_params)
         redirect_to @game
       end 
-      
+
       def destroy
         @game.destroy
         # redirect_to games_path

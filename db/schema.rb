@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_25_085549) do
+ActiveRecord::Schema.define(version: 2021_11_25_131157) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 2021_11_25_085549) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "price"
+    t.bigint "users_id", null: false
+    t.index ["users_id"], name: "index_listings_on_users_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -56,4 +58,5 @@ ActiveRecord::Schema.define(version: 2021_11_25_085549) do
 
   add_foreign_key "game_genres", "games"
   add_foreign_key "game_genres", "genres"
+  add_foreign_key "listings", "users", column: "users_id"
 end

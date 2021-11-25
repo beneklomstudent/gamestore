@@ -4,5 +4,6 @@ class Genre < ApplicationRecord
 
 
     def thegenres
-        return "#{:genrenames}"
+        return "#{genrename}"
+    end
 end

@@ -4,10 +4,13 @@
         <%= f.label :name %>
         <%= f.text_field :name %>
     </p>
-     <p>
-        <%# <%= f.label :genre_id %>
-        <%# <%= f.collection_select :genre_id, @genres, :id, :thegenres %>
+    <p>
+
     </p>
+     <p>
+    <%# <%= f.label :genre_id %>
+   <%= collection_select(:genre, :genre_id, Genre.all, :id, :thegenres) %>
+    </p> 
    <p>
         <%= f.submit caption %>
     </p>
