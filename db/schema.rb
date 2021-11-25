@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_25_025304) do
+ActiveRecord::Schema.define(version: 2021_11_25_075425) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,18 +28,14 @@ ActiveRecord::Schema.define(version: 2021_11_25_025304) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
-    t.bigint "game_genres_id", null: false
-    t.index ["game_genres_id"], name: "index_games_on_game_genres_id"
-  end
-
-  create_table "games_genres", id: false, force: :cascade do |t|
-    t.bigint "game_id", null: false
     t.bigint "genre_id", null: false
+    t.index ["genre_id"], name: "index_games_on_genre_id"
   end
 
   create_table "genres", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "genre"
   end
 
   create_table "listings", force: :cascade do |t|
@@ -64,6 +60,6 @@ ActiveRecord::Schema.define(version: 2021_11_25_025304) do
 
   add_foreign_key "game_genres", "games", column: "games_id"
   add_foreign_key "game_genres", "genres", column: "genres_id"
-  add_foreign_key "games", "game_genres", column: "game_genres_id"
+  add_foreign_key "games", "genres"
   add_foreign_key "listings", "games", column: "games_id"
 end
