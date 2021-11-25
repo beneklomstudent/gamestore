@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_25_023345) do
+ActiveRecord::Schema.define(version: 2021_11_25_025304) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,12 +18,23 @@ ActiveRecord::Schema.define(version: 2021_11_25_023345) do
   create_table "game_genres", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "games_id", null: false
+    t.bigint "genres_id", null: false
+    t.index ["games_id"], name: "index_game_genres_on_games_id"
+    t.index ["genres_id"], name: "index_game_genres_on_genres_id"
   end
 
   create_table "games", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
+    t.bigint "game_genres_id", null: false
+    t.index ["game_genres_id"], name: "index_games_on_game_genres_id"
+  end
+
+  create_table "games_genres", id: false, force: :cascade do |t|
+    t.bigint "game_id", null: false
+    t.bigint "genre_id", null: false
   end
 
   create_table "genres", force: :cascade do |t|
@@ -35,26 +46,8 @@ ActiveRecord::Schema.define(version: 2021_11_25_023345) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "price"
-  end
-
-  create_table "model_game_genres", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "model_games", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "model_genres", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "model_listings", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "games_id", null: false
+    t.index ["games_id"], name: "index_listings_on_games_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -69,4 +62,8 @@ ActiveRecord::Schema.define(version: 2021_11_25_023345) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "game_genres", "games", column: "games_id"
+  add_foreign_key "game_genres", "genres", column: "genres_id"
+  add_foreign_key "games", "game_genres", column: "game_genres_id"
+  add_foreign_key "listings", "games", column: "games_id"
 end
