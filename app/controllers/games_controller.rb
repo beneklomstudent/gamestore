@@ -1,5 +1,4 @@
 class GameController < ApplicationController
-  before_action :set_genres, only: [:new, :edit, :create]
     def create
         @game = Game.new(game_params)
         begin
@@ -12,12 +11,10 @@ class GameController < ApplicationController
           end
 
     def game_params
-        params.require(:name).permit(genre_id: [])
+        params.require(:name, :price).permit(genre_id: [])
 
     end
-    def set_genres
-      @genres = Genre.order(:genrename)
-    end
+
 
     def update
         @game.update(game_params)

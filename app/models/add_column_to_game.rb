@@ -1,0 +1,2 @@
+class AddColumnToGame < ApplicationRecord
+end

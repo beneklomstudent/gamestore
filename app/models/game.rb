@@ -1,6 +1,6 @@
 class Game < ApplicationRecord
     has_many :game_genres, dependent: :destroy
     has_many :genres, through: :game_genres
-    belongs_to :listing
+    belongs_to :post
    end
    
