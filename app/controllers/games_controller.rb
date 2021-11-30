@@ -11,7 +11,7 @@ class GameController < ApplicationController
           end
 
     def game_params
-        params.require(:name, :price).permit(genre_id: [])
+        params.require(:name).permit(:genre, :platform)
 
     end
 

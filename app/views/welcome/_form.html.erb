@@ -1,11 +1,10 @@
 <%= form_with model: @game do |f| %> 
 
-     <p>
-        <%= f.label :name %>
-        <%= f.text_field :name %>
-    </p>
+     <div class="mb-6">
+    <%= form.label :name, class: "label"%>
+    <%= form.text_field :name, class: "input"%>
+  </div>
     <p>
-   
    <%= collection_select(:genre, :genre_id, Genre.all, :id, :thegenres) %>
     </p> 
    <p>
@@ -13,3 +12,5 @@
     </p>
     
     <% end %>
+
+    

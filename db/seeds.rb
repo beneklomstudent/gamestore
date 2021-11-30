@@ -9,6 +9,7 @@ genres = [
     Genre.create!(genrename: "Rythm"),
     Genre.create!(genrename: "Platformer"),
     Genre.create!(genrename: "Educational")
+    Genre.create!(genrename: "other")
 ]
 
 Game.create!(name: "DoDonPachi")
