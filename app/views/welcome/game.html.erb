@@ -1,0 +1,17 @@
+<%= form_with model: @game do |form| %> 
+<div>
+    <%= form.label :game, class: "label"%>
+    <%= form.text_field :name, class: "input"%>
+  </div>
+    <p>
+     <%= form.label :genre, class: "label"%>
+   <%= form.collection_check_boxes(:genre_id, Genre.all, :id, :thegenres) %>
+      
+   
+
+    </p> 
+   <p>
+        <%= form.submit %>
+    </p>    
+    
+    <% end %>

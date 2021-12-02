@@ -1,5 +1,12 @@
-class GameController < ApplicationController
-    def create
+class GamesController < ApplicationController
+  before_action :authenticate_user!
+  
+  # def game_params
+  #   params.require(:game).permit(:name, :genre_id)
+  # end
+  
+  
+  def create
         @game = Game.new(game_params)
         begin
             @game.save!
@@ -10,9 +17,10 @@ class GameController < ApplicationController
             @game = Game.new
           end
 
-    def game_params
-        params.require(:name).permit(:genre, :platform)
+   
 
+    def initialize
+      @errors = ActiveModel::Errors.new(self)
     end
 
 

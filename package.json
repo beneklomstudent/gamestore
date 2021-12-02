@@ -2,7 +2,8 @@
   "name": "gamestore",
   "private": true,
   "dependencies": {
-    "@popperjs/core": "^2.10.2",
+    "@hotwired/stimulus": "^3.0.1",
+    "@popperjs/core": "^2.11.0",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",

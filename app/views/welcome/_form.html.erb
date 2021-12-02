@@ -1,16 +1,24 @@
-<%= form_with model: @game do |f| %> 
-
-     <div class="mb-6">
-    <%= form.label :name, class: "label"%>
-    <%= form.text_field :name, class: "input"%>
+<%= form_with(model: @post, local: true, multipart: true) do |form| %> 
+<div>
+    <%= form.label :game, class: "label"%>
+    <%= form.text_field :game, class: "input"%>
+  </div>
+  <div>
+  <%= form.label :price, class: "label"%>
+  <%= form.text_field :price, class: "input"%>
   </div>
     <p>
+     <%= form.label :genre, class: "label"%>
    <%= collection_select(:genre, :genre_id, Genre.all, :id, :thegenres) %>
+
     </p> 
    <p>
-        <%= f.submit caption %>
-    </p>
+        <%= form.submit %>
+    </p>    
     
     <% end %>
 
-    
+
+
+
+

@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
+  
 
   # GET /posts or /posts.json
   def index
@@ -55,6 +56,21 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def create
+    @post = Post.new(post_params)
+    begin
+        @post.save!
+        redirect_to @post
+    end
+
+    def new
+        @post = Post.new
+      end
+
+
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -64,6 +80,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post, :game, :price).permit(:name, :title, :content)
+      params.require(:post, :game, :price)
     end
 end
