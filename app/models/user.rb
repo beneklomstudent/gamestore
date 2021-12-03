@@ -8,7 +8,7 @@ class User < ApplicationRecord
 # include DeviseTokenAuth::Concerns::User
   
 
-has_many :posts, dependent: :destroy 
+has_many :listings, dependent: :destroy 
 
 end
 

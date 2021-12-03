@@ -1,20 +1,30 @@
-<%= form_with(model: @post, local: true, multipart: true) do |form| %> 
+<%= form_with do |f| %> 
+<%# <%= form_for :listing do |f| %> 
 <div>
-    <%= form.label :game, class: "label"%>
-    <%= form.text_field :game, class: "input"%>
+  <%= f.label :listingname, class: "label" %>
+<%= f.text_field :listingname, class: "input"%>
+  <%= f.hidden_field :listing %>   
+</div>
+
+
+
+<div>
+    <%= f.label :game, class: "label"%>
+    <%= f.text_field :gamename, class: "input"%>
   </div>
   <div>
-  <%= form.label :price, class: "label"%>
-  <%= form.text_field :price, class: "input"%>
+  <%= f.label :price, class: "label"%>
+  <%= f.text_field :price, class: "input"%>
   </div>
     <p>
-     <%= form.label :genre, class: "label"%>
+     <%= f.label :genre, class: "label"%>
    <%= collection_select(:genre, :genre_id, Genre.all, :id, :thegenres) %>
 
     </p> 
    <p>
-        <%= form.submit %>
+        <%= f.submit class: "btn btn-default" %>
     </p>    
+    
     
     <% end %>
 

@@ -64,3 +64,5 @@ gem "sidekiq", "~> 6.3"
 gem "tailwindcss-rails", "~> 0.5.1"
 
 gem "webpack", "~> 0.4.2"
+
+gem "pundit", "~> 2.1"

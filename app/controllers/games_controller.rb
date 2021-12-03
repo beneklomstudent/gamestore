@@ -1,23 +1,24 @@
 class GamesController < ApplicationController
   before_action :authenticate_user!
-  
-  # def game_params
-  #   params.require(:game).permit(:name, :genre_id)
-  # end
-  
-  
+  before_action :set_game, only: [:update, :edit, :show, :destroy]
+
+  def new
+    @game = Game.new
+  end
+
+
   def create
         @game = Game.new(game_params)
         begin
             @game.save!
             redirect_to @game
+          # rescue
+          #   flash.now[:errors] = @game.errors.messages.values.flatten
+          #   render 'index'
+          # end
         end
-
-        def new
-            @game = Game.new
-          end
-
-   
+      end
+     
 
     def initialize
       @errors = ActiveModel::Errors.new(self)
@@ -34,6 +35,14 @@ class GamesController < ApplicationController
         # redirect_to games_path
       end
 
-  end
+      private
 
-end
+      def game_params
+        params.require(:game).permit(:gamename,:genre_id)
+      end
+    
+
+    def set_game  
+      @game = Game.find(params[:id])
+    end
+  end
