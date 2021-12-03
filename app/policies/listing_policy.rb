@@ -1,4 +1,4 @@
-class GamePolicy
+class ListingPolicy
     attr_reader :user, :record
   
     def initialize(user, record)

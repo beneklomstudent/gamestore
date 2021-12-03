@@ -7,16 +7,14 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => "/sideqik"
     end
     
-  root to: 'welcome#index'
-  post "new", to: "listings#create"
-  post "listing", to: "listings#create"
+  root to: 'listings#index'
   get "/game", to: "welcome#game"
   get "/index", to: "welcome#index"
   get "/new", to: "welcome#new"
   get "/game", to: "welcome#game"
   get "/edit", to: "welcome#edit"
   post "/game", to: "games#create"
-  get "/listing", to: "welcome#new"
+  get "/listingindex", to: "listings#index"
   # post "/listing", to: "listings#create"
 
 

@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
 before_action :authenticate_user!, except: [:index, :show]
-before_action :set_listing, only: [:create, :show, :edit, :update, :destroy]
+before_action :set_listing, only: [:update, :edit, :show, :destroy]
 
 def index
     @listings = Listing.order(listingname: :asc)
@@ -8,7 +8,7 @@ def index
 
 
   def show
-  end
+  end 
 
   def new
     @listing = Listing.new
@@ -22,7 +22,7 @@ def index
 
   def create
     @listing = Listing.new(listing_params)
-    @listing.user_id = current_user.id
+    # @listing.user_id = current_user.id
     begin
       @listing.save!
       redirect_to @index
@@ -52,6 +52,6 @@ def index
 
     def listing_params
         
-      params.require(:listing).permit(:listingname, :gamename, :genre_id, :price)
+      params.permit(:listingname, :game_id, :price, genre_id: [])
     end 
 end
