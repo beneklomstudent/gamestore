@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 class ApplicationPolicy
-  attr_reader :user, :record
+  attr_reader :curren_user, :listing
 
-  def initialize(user, record)
-    @user = user
-    @record = record
+  def initialize(current_user, post)
+    @current_user = current_user
+    @listing = listing
   end
 
   def index?
@@ -17,37 +17,37 @@ class ApplicationPolicy
   end
 
   def create?
-    false
+    @current_user.role == 'admin'
   end
 
   def new?
-    create?
+    @current_user.role == 'admin'
   end
 
   def update?
-    false
+    @current_user.role == 'admin'
   end
 
   def edit?
-    update?
+    @current_user.role == 'admin'
   end
 
   def destroy?
-    false
+    @current_user.role == 'admin'
   end
 
-  class Scope
-    def initialize(user, scope)
-      @user = user
-      @scope = scope
-    end
+  # class Scope
+  #   def initialize(user, scope)
+  #     @user = user
+  #     @scope = scope
+  #   end
 
-    def resolve
-      scope.all
-    end
+  #   def resolve
+  #     scope.all
+  #   end
 
-    private
+  #   private
 
-    attr_reader :user, :scope
+  #   attr_reader :user, :scope
   end
 end

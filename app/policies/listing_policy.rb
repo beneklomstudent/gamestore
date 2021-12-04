@@ -1,9 +1,9 @@
 class ListingPolicy
-    attr_reader :user, :record
+    attr_reader :curren_user, :listing
   
-    def initialize(user, record)
-      @user = user
-      @record = record
+    def initialize(current_user, post)
+      @current_user = current_user
+      @listing = listing
     end
   
     def index?
@@ -15,7 +15,8 @@ class ListingPolicy
     end
   
     def create?
-      user.has_role?(:admin)
+      # user.has_role?(:admin)
+      true
     end
   
     def new?
@@ -23,7 +24,7 @@ class ListingPolicy
     end
   
     def update?
-      user.has_any_role?(:admin, :editor)
+      @current_user.role == 'admin'
     end
   
     def edit?

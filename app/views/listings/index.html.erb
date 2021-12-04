@@ -1,5 +1,9 @@
-<h1>Create A new listing</h1>
+<h1> Listings </h1>
 
-
-<%# <%= render 'form', listing: @listing %> 
-<%= render 'form', caption: "new listing" %>
+<div>
+<% @listings.each do |listing| %>
+<%= listing.price %>
+<h2><%= listing.listingname %> </h2>
+<% end %>
+</div>
+</table>

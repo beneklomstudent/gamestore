@@ -1,0 +1,20 @@
+<h1><%= @listing.listingname %></h1>
+<h1><%= @listing.user_id %> </h1>
+
+<% end %>
+<h5>Genres: <%= @listing.genres.map { |g| g.genrename }%></h5>
+<p>Game Title: <%= @listing.gamename %></p>
+<p>
+    <%= link_to "<< Back to listings", books_path %>
+    <%# <%= link_to "BUY NOW!", buy_path(@book.id) %> %>
+    |
+    <%# <%= link_to "Add To Cart", add_to_cart_path(@book.id) %>
+    <%# <% if policy(@book).update? %> %> %>
+        |
+        <%= link_to "Edit", edit_listing_path(@listing) %>
+    <% end %>
+    <% if policy(@listing).destroy? %>
+        |
+        <%= link_to "Delete", @listing, method: :delete, data: { confirm: "Are you sure?" } %>
+    <% end %>
+</p>
