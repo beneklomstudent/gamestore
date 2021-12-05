@@ -1,13 +1,12 @@
 class ListingsController < ApplicationController
-# before_action :authenticate_user!, except: [:index, :show]
-# before_action :check_auth, except: [:search]
-before_action :set_listing, only: [:update, :edit, :show, :destroy]
+
+before_action :set_listing, only: [:update, :edit, :show, :destroy]   
 before_action :authenticate_user!
 
-# def set_listing
-#   @listing = Listing.find(params[:id])  
-#   authorize @listing
-# end
+def set_listing
+  @listing = Listing.find(params[:id])  
+  authorize @listing
+end
 
 def listing_params
   params.require(:listing).permit(:listingname, :cover, :price, :gamename, :genre)
@@ -17,10 +16,6 @@ def index
     @listings = Listing.active
     authorize @listings
   end
-
-
-  def show
-  end 
 
   def new
     @listing = Listing.new
@@ -42,6 +37,11 @@ def index
       @listing.save!
       redirect_to action: "index"
     end
+        
+  def show
+    @listing = Listing.find(params[:id])
+    render :show
+  end
   
   #   respond_to do |format|
   #     if @listing.save
@@ -61,9 +61,6 @@ def index
   end
 
     # Use callbacks to share common setup or constraints between actions.
-
-    
-
 
     
   def check_auth
