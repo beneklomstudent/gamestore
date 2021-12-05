@@ -222,6 +222,7 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (0.7.3)
       rails (>= 6.0.0)
+    stripe (5.41.0)
     tailwindcss-rails (0.5.4)
       railties (>= 6.0.0)
     thor (1.1.0)
@@ -282,6 +283,7 @@ DEPENDENCIES
   sidekiq (~> 6.3)
   spring
   stimulus-rails (~> 0.7.3)
+  stripe (~> 5.41)
   tailwindcss-rails (~> 0.5.1)
   turbolinks (~> 5)
   tzinfo-data

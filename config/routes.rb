@@ -8,14 +8,12 @@ Rails.application.routes.draw do
     end
     
   root to: 'listings#index'
-  get "/game", to: "welcome#game"
   get "/index", to: "listings#index"
   get "/new", to: "listings#new"
-  get "/game", to: "welcome#game"
   get "/edit", to: "listings#edit"
-  post "/game", to: "games#create"
   get "/show", to: "listings#show"
   get "/test", to: "listings#test"
+  get "/delete", to: "listings#delete"
   
 
 end

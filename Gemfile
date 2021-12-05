@@ -74,3 +74,5 @@ gem "cloudinary", "~> 1.21"
 gem "stimulus-rails", "~> 0.7.3"
 
 gem "cssbundling-rails", "~> 0.2.7"
+
+gem "stripe", "~> 5.41"

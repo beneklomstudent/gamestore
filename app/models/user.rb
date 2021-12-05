@@ -18,7 +18,7 @@ end
 # include DeviseTokenAuth::Concerns::ActiveRecordSupport
 # include DeviseTokenAuth::Concerns::User
   def set_role
-    self.add_role(:user) if self.roles.blank
+    self.add_role(:user) if self.role.nil?
   end
 
 

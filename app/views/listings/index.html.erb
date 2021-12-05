@@ -16,7 +16,7 @@
       <% if admin? || author_of(listing) %>
     <div class="absolute top-0 right-0 mt-4 mr-4">
       <%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-sm btn-outlined btn-default" %>
-      <%= link_to 'Delete', listing_path(listing), method: :delete, class: "btn btn-sm btn-outlined btn-default", data: { confirm: "Are you sure?" } %>
+      <%= link_to 'Delete', listing.delete, class: "btn btn-sm btn-outlined btn-default", data: { confirm: "Are you sure?" } %>
   
   <% end %>
 

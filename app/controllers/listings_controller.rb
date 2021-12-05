@@ -61,8 +61,13 @@ def index
   end
 
     # Use callbacks to share common setup or constraints between actions.
-
+def delete
+  @listing.delete
+ 
+ 
     
+  end
+
   def check_auth
     authorize Listing
   end
