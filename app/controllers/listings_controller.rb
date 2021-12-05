@@ -5,8 +5,12 @@ before_action :set_listing, only: [:update, :edit, :show, :destroy]
 after_action :verify_authorized, only: [:new, :create, :edit, :destroy]
 
 
+def listing_params
+  params.require(:listing).permit(:listingname, :cover, :game_id, :price, genre_id: [])
+end 
+
 def index
-    @listings = Listing.order(listingname: :asc)
+    @listings = Listing.active
     authorize @listings
   end
 
@@ -48,7 +52,7 @@ def index
     end
   end
 
-  private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_listing
       @listing = Listing.find(params[:id])  
@@ -56,10 +60,7 @@ def index
     end
   
 
-    def listing_params
-        
-      params.permit(:listingname, :cover, :game_id, :price, genre_id: [])
-    end 
+
     
   def check_auth
     authorize Listing

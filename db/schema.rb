@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_04_163907) do
+ActiveRecord::Schema.define(version: 2021_12_05_040721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,8 @@ ActiveRecord::Schema.define(version: 2021_12_04_163907) do
     t.bigint "users_id"
     t.string "listingname"
     t.integer "price"
+    t.datetime "expires_at", default: "2022-01-04 04:49:52"
+    t.string "status", default: "active"
     t.index ["users_id"], name: "index_listings_on_users_id"
   end
 

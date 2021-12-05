@@ -1,5 +1,4 @@
-
-Game.destroy_all
+Listing.destroy_all
 Genre.destroy_all
 
     Genre.create!(genrename: "Shooter")
@@ -12,5 +11,5 @@ Genre.destroy_all
     Genre.create!(genrename: "other")
 
 
-Listing.create!(listingname: "new listing test")
+# Listing.create!(listingname: "new listing test")
 

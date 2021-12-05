@@ -1,10 +1,11 @@
 <h1> Listings </h1>
 
 <div>
-<%= @listings %>
+
 <% @listings.each do |listing| %>
-<%= listing.price %>
-<h2><%= listing.listingname %> </h2>
+<%= listings.index %>
+<h1><%= listing.price %></h1>
+<h2><%= listing.listing %> </h2>
  <%# <% link_to 'view listing', listing, class: "btn btn-default"%> %>
   <%# <% if author_of(listing)%>
  <%# <%= link_to 'Edit', edit_listing_path(listing) do %> %> %>
@@ -13,4 +14,5 @@
 <div>
 </div>
 </table>
+
 
