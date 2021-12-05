@@ -2,11 +2,15 @@ class ListingsController < ApplicationController
 # before_action :authenticate_user!, except: [:index, :show]
 # before_action :check_auth, except: [:search]
 before_action :set_listing, only: [:update, :edit, :show, :destroy]
-after_action :verify_authorized, only: [:new, :create, :edit, :destroy]
+before_action :authenticate_user!
 
+# def set_listing
+#   @listing = Listing.find(params[:id])  
+#   authorize @listing
+# end
 
 def listing_params
-  params.require(:listing).permit(:listingname, :cover, :game_id, :price, genre_id: [])
+  params.require(:listing).permit(:listingname, :cover, :price, :gamename, :genre)
 end 
 
 def index
@@ -34,15 +38,19 @@ def index
     @listing = Listing.new(listing_params)
     @listing.users_id = current_user.id
     authorize @listing
-
-    respond_to do |format|
-      if @listing.save
-        format.html { redirect_to @listing, notice: 'Project was successfully created.' }
-        format.json { render :show, location: @listing }
-  else
-    format.html { render :new }
-    format.json { render json: @listings.errors, status: :unprocessable_entity }
-  end
+    begin
+      @listing.save!
+      redirect_to action: "index"
+    end
+  
+  #   respond_to do |format|
+  #     if @listing.save
+  #       format.html { redirect_to @listing, notice: 'Project was successfully created.' }
+  #       format.json { render :show, location: @listing }
+  # else
+  #   format.html { render :new }
+  #   format.json { render json: @listings.errors, status: :unprocessable_entity }
+  # end
 
   def destroy
     @listing.destroy
@@ -52,19 +60,14 @@ def index
     end
   end
 
-
     # Use callbacks to share common setup or constraints between actions.
-    def set_listing
-      @listing = Listing.find(params[:id])  
-      authorize @listing
-    end
-  
+
+    
 
 
     
   def check_auth
     authorize Listing
   end
-end
 end
 end

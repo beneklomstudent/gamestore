@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_05_040721) do
+ActiveRecord::Schema.define(version: 2021_12_05_114117) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,19 +43,6 @@ ActiveRecord::Schema.define(version: 2021_12_05_040721) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "games", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "gamename"
-  end
-
-  create_table "games_genres", id: false, force: :cascade do |t|
-    t.bigint "game_id", null: false
-    t.bigint "genre_id", null: false
-    t.index ["game_id"], name: "index_games_genres_on_game_id"
-    t.index ["genre_id"], name: "index_games_genres_on_genre_id"
-  end
-
   create_table "genres", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -70,6 +57,8 @@ ActiveRecord::Schema.define(version: 2021_12_05_040721) do
     t.integer "price"
     t.datetime "expires_at", default: "2022-01-04 04:49:52"
     t.string "status", default: "active"
+    t.string "gamename"
+    t.string "genre"
     t.index ["users_id"], name: "index_listings_on_users_id"
   end
 

@@ -6,7 +6,12 @@
     @apply border;
   }
 }
-
+.shadowbox {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px;
+  text-align: center;
+}
 
 .input:focus {
   @apply outline-none bg-white;

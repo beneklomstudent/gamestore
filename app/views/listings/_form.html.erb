@@ -1,31 +1,29 @@
 <%= form_with model: @listing do |f| %> 
 <%# <%= form_for :listing do |f| %> 
-<div>
-  <%= f.label :listingname, class: "label" %>
+<div id="shadowbox">
+  <%= f.label :Listing_name, class: "label" %>
 <%= f.text_field :listingname, class: "input"%>
 
 </div>
-
-
-<div>
-    <%= f.label :game, class: "label"%>
+<div id="shadowbox">
+    <%= f.label :Game, class: "label"%>
     <%= f.text_field :gamename, class: "input"%>
+
   </div>
-  <div>
-  <%= f.label :price, class: "label"%>
+  <div id="shadowbox">
+  <%= f.label :Price, class: "label"%>
   <%= f.text_field :price, class: "input"%>
   </div>
-    <p>
-     <%= f.label :genre, class: "label"%>
-   <%= collection_select(:genre, :genre_id, Genre.all, :id, :thegenres) %>
-    </p> 
-   <p>
+    <div id="shadowbox">
+     <%= f.label :Genre, class: "label"%>
+   <%= f.text_field :genrename, class: "input"%>
+    </div>
+  <div id="shadowbox">
 <%= f.label :cover %>
 <%= f.file_field :cover %>
-
-   </p>
+</div>
    <p>
-        <%= f.submit class: "btn btn-default" %>
+        <%= f.submit class: "btn-white" %>
     </p>    
     
     

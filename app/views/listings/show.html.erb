@@ -1,5 +1,11 @@
-<% if @listing.active? %>
-  <%= render "active_project", listing: @listing %>
-<% else %>
-  <%= render "inactive_project", listing: @listing %>
+<%# <% if @listing.active? %>
+  <%# <%= render "active_project", listing: @listing %> %>
+<%# <% else %> %>
+  <%# <%= render "inactive_project", listing: @listing %> %>
+<%# <% end %> %> %>
+<h1><%= @listing.listingname %></h1>
+<h3><%= @listing.genre_id %></h3>
+    <%= image_tag @listing.cover, width: 150 %>
 <% end %>
+
+:listingname, :cover, :game_id, :price, genre_id:

@@ -1,18 +1,32 @@
 <h1> Listings </h1>
 
-<div>
-
-<% @listings.each do |listing| %>
-<%= listings.index %>
-<h1><%= listing.price %></h1>
-<h2><%= listing.listing %> </h2>
- <%# <% link_to 'view listing', listing, class: "btn btn-default"%> %>
-  <%# <% if author_of(listing)%>
- <%# <%= link_to 'Edit', edit_listing_path(listing) do %> %> %>
+<% if policy(Listing).new? %>
+    <p><%= link_to "New listing", new_listing_path %></p>
 <% end %>
-</div>
+<p>
+<% @listings.each do |listing| %>
+<div id="shadowbox">
+ <p> <%= listing.listingname %> </p>
+ <p> <%= listing.gamename%> </p>
+ <p>  <%= listing.genre %> </p>
+  <p><%= listing.price %></p>
+
+ </div>
+<% end %>
+<%#     
+  
+
+
+
+
+
+
+<%# :id, :gamename, :listingname, :users_id, :created_at, :updated_at, :price, :status %>
+
+
 <div>
 </div>
 </table>
+
 
 

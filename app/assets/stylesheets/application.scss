@@ -14,13 +14,13 @@
  *= require_self
  */
 
- @tailwind base;
+@tailwind base;
 @tailwind components;
 
 // Custom SCSS
 @import "components/buttons";
 @import "components/forms";
-@import "components/actiontext";
+// @import "components/actiontext";
 @import "components/typography";
 
 @tailwind utilities;
