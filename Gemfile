@@ -68,3 +68,7 @@ gem "webpack", "~> 0.4.2"
 gem "pundit", "~> 2.1"
 
 gem "rolify", "~> 6.0"
+
+gem "cloudinary", "~> 1.21"
+
+gem "stimulus-rails", "~> 0.7.3"

@@ -3,7 +3,7 @@
 class ApplicationPolicy
   attr_reader :curren_user, :listing
 
-  def initialize(current_user, post)
+  def initialize(current_user, listing)
     @current_user = current_user
     @listing = listing
   end
