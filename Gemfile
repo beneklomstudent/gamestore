@@ -59,7 +59,7 @@ gem "bootstrap", "~> 5.1"
 
 gem "devise", "~> 4.8"
 
-gem "sidekiq", "~> 6.3"
+# gem "sidekiq", "~> 6.3"
 
 gem "tailwindcss-rails", "~> 0.5.1"
 
