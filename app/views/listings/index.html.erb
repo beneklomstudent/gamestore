@@ -11,15 +11,22 @@
  <p>  <%= listing.genre %> </p>
   <p><%= listing.price %></p>
  
-   <% if listing.users_id =/= current_user.id %>
-   <%= link_to edit_listing_path(listing) %> 
+<th></th>
      
       <% if admin? || author_of(listing) %>
-    
       <%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-sm btn-outlined btn-default" %>
-      <%= link_to 'Delete', listing.delete, class: "btn btn-sm btn-outlined btn-default", data: { confirm: "Are you sure?" } %>
+       <td><%= link_to "show", listing_path(listing) %></td>
 
-  <% end %>
   
+  <% end %>
+
+ </div>
+<% end %>
+
+
+<div>
+</div>
+</table>
+
 
 

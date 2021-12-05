@@ -1,7 +1,5 @@
 class Listing < ApplicationRecord
     belongs_to :user, optional: true
-    has_many :games, dependent: :destroy  
-    has_many :genres, dependent: :destroy
     has_one_attached :cover, dependent: :purge
   
 

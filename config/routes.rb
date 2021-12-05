@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get "/show", to: "listings#show"
   get "/test", to: "listings#test"
   get "/delete", to: "listings#delete"
-  
+  # get "/destroy", to: "listings#delete"
+  delete 'listings/:id', to: 'listing#destroy'
 
 end

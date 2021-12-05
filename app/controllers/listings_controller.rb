@@ -5,7 +5,7 @@ before_action :authenticate_user!
 
 def set_listing
   @listing = Listing.find(params[:id])  
-  authorize @listing
+  # authorize @listing
 end
 
 def listing_params
@@ -14,62 +14,53 @@ end
 
 def index
     @listings = Listing.active
-    authorize @listings
-  end
+    # authorize @listings
+end
+  
+    def create
+      @listing = Listing.new(listing_params)
+      @listing.users_id = current_user.id
+      # authorize @listing
+      begin
+        @listing.save!
+        redirect_to action: "index"
+      end
+    end
+    
 
   def new
     @listing = Listing.new
-    authorize @listing
+    # authorize @listing
 
     end
+
+  def update
+    @listing.update(listing_params)
+    redirect_to @listing
 
 
   def edit
-    authorize @listing
+    # authorize @listing
   end
 
 
-  def create
-    @listing = Listing.new(listing_params)
-    @listing.users_id = current_user.id
-    authorize @listing
-    begin
-      @listing.save!
-      redirect_to action: "index"
-    end
-        
+         
   def show
     @listing = Listing.find(params[:id])
     render :show
   end
   
-  #   respond_to do |format|
-  #     if @listing.save
-  #       format.html { redirect_to @listing, notice: 'Project was successfully created.' }
-  #       format.json { render :show, location: @listing }
-  # else
-  #   format.html { render :new }
-  #   format.json { render json: @listings.errors, status: :unprocessable_entity }
-  # end
 
-  def destroy
-    @listing.destroy
-    respond_to do |format|
-      format.html { redirect_to listings_url, notice: 'Listing was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+  def destroy   
+    @listing = Listing.find(params[:listing_id])
+  #   @listing.destroy
+  #  redirect to index(@listing)
   end
 
-    # Use callbacks to share common setup or constraints between actions.
-def delete
-  @listing.delete
- 
- 
+
     
   end
 
-  def check_auth
-    authorize Listing
-  end
-end
+
+
 end

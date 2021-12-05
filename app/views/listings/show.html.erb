@@ -1,11 +1,15 @@
-<%# <% if @listing.active? %>
-  <%# <%= render "active_project", listing: @listing %> %>
-<%# <% else %> %>
-  <%# <%= render "inactive_project", listing: @listing %> %>
-<%# <% end %> %> %>
 <h1><%= @listing.listingname %></h1>
-<h3><%= @listing.genre_id %></h3>
-    <%= image_tag @listing.cover, width: 150 %>
-<% end %>
+<h3>Price:<%= @listing.price %></h3>
 
-:listingname, :cover, :game_id, :price, genre_id:
+<div id=shadowbox>
+<% if @listing.cover.attached? %>
+    <%= image_tag @listing.cover, width: 150 %>
+<% end %>   
+ <% if admin? || author_of(listing) %>
+<%= link_to "Delete", @listing.delete%>
+<% end %>
+        <%# <%= link_to "Edit", edit_listing_path(@listing) %>
+   
+    <%# <% if policy(@listing).destroy? %>
+        <%# <%= link_to "Delete", @listing.destroy %> 
+    <%# <% end %> 
