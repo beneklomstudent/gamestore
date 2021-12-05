@@ -10,32 +10,16 @@
  <p> <%= listing.gamename%> </p>
  <p>  <%= listing.genre %> </p>
   <p><%= listing.price %></p>
-   <%# <% if users_id = current_user.id %>
-   <%# <%= link_to edit_listing_path(listing) %> 
+ 
+   <% if listing.users_id =/= current_user.id %>
+   <%= link_to edit_listing_path(listing) %> 
      
       <% if admin? || author_of(listing) %>
-    <div class="absolute top-0 right-0 mt-4 mr-4">
+    
       <%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-sm btn-outlined btn-default" %>
       <%= link_to 'Delete', listing.delete, class: "btn btn-sm btn-outlined btn-default", data: { confirm: "Are you sure?" } %>
-  
+
   <% end %>
-
- </div>
-<% end %>
-<%#     
   
-
-
-
-
-
-
-<%# :id, :gamename, :listingname, :users_id, :created_at, :updated_at, :price, :status %>
-
-
-<div>
-</div>
-</table>
-
 
 
