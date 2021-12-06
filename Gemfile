@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
-# gem 'bootsnap', '>= 1.4.4', require: false
+gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -55,11 +55,13 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# gem "bootstrap", "~> 5.1"
+gem "bootstrap", "~> 5.1"
 
 gem "devise", "~> 4.8"
 
-gem "sidekiq", "~> 6.3"
+# gem "sidekiq", "~> 6.3"
+
+# gem "tailwindcss-rails", "~> 0.5.1"
 
 gem "webpack", "~> 0.4.2"
 
@@ -67,7 +69,7 @@ gem "pundit", "~> 2.1"
 
 gem "rolify", "~> 6.0"
 
-gem "cloudinary", "~> 1.21" 
+gem "cloudinary", "~> 1.21"
 
 gem "stimulus-rails", "~> 0.7.3"
 
