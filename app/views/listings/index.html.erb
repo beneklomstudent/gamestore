@@ -1,8 +1,6 @@
 <h1> Listings </h1>
 
-<% if policy(Listing).new? %>
-    <p><%= link_to "New listing", new_listing_path %></p>
-<% end %>
+
 <p>
 <% @listings.each do |listing| %>
 <div id="shadowbox">
@@ -10,14 +8,13 @@
  <p> <%= listing.gamename%> </p>
  <p>  <%= listing.genre %> </p>
   <p><%= listing.price %></p>
- 
+ =
 <th></th>
      
       <% if admin? || author_of(listing) %>
       <%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-sm btn-outlined btn-default" %>
-       <td><%= link_to "show", listing_path(listing) %></td>
-
-  
+       <td><%= link_to "Delete", delete_path(listing), method: :delete %></td>
+      
   <% end %>
 
  </div>

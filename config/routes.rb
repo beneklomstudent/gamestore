@@ -16,5 +16,5 @@ Rails.application.routes.draw do
   get "/delete", to: "listings#delete"
   # get "/destroy", to: "listings#delete"
   delete 'listings/:id', to: 'listing#destroy'
-
+  get "/checkout", to: 'listings#checkout'
 end
