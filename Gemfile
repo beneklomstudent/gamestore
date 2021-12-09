@@ -15,7 +15,7 @@ gem 'sass-rails', '>= 6'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-# gem 'jbuilder', '~> 2.7'
+gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -69,7 +69,7 @@ gem "pundit", "~> 2.1"
 gem "rolify", "~> 6.0"
 
 gem "cloudinary", "~> 1.21"
-
+gem "activestorage-cloudinary-service", "~> 0.2.3"
 # gem "stimulus-rails", "~> 0.7.3"
 
 # gem "cssbundling-rails", "~> 0.2.7"
@@ -77,3 +77,4 @@ gem "cloudinary", "~> 1.21"
 gem "stripe", "~> 5.41"
 
 gem "webpacker", "~> 5.4"
+gem "dotenv-rails", "~> 2.7"
