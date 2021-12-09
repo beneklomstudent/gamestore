@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
 
-before_action :set_listing, only: [:update, :edit, :show, :destroy]   
+before_action :set_listing, only: [:update, :edit, :show, :destroy, :delete]   
 before_action :authenticate_user!
 
 def set_listing
@@ -16,7 +16,7 @@ def index
     @listings = Listing.active
     # authorize @listings
 end
-  
+
     def create
       @listing = Listing.new(listing_params)
       @listing.users_id = current_user.id
@@ -27,17 +27,14 @@ end
       end
     end
     
-
   def new
     @listing = Listing.new
-    # authorize @listing
-
     end
 
   def update
     @listing.update(listing_params)
     redirect_to @listing
-
+  end
 
   def edit
     # authorize @listing
@@ -51,16 +48,25 @@ end
   end
   
 
-  def destroy   
-    @listing = Listing.find(params[:listing_id])
-  #   @listing.destroy
-  #  redirect to index(@listing)
+  # def delete
+  #   @listing = Listing.find(params[:id])
+  #   render 'delete'
+  # end
+
+  def destroy
+       # Perform the lookup
+       @listing = Listing.find(params[:id])
+  begin
+    @post.delete
   end
+end
 
-
-    
-  end
-
-
+  # def destroy
+  #   @post = Post.find(params[:id])
+  #  begin
+  #   @post.destroy
+  #     end
+   
+  #   end
 
 end

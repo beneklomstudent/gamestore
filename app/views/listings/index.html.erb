@@ -1,6 +1,5 @@
 <h1> Listings </h1>
 
-
 <p>
 <% @listings.each do |listing| %>
 <div id="shadowbox">
@@ -8,17 +7,16 @@
  <p> <%= listing.gamename%> </p>
  <p>  <%= listing.genre %> </p>
   <p><%= listing.price %></p>
- =
-<th></th>
-     
-      <% if admin? || author_of(listing) %>
-      <%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-sm btn-outlined btn-default" %>
-       <td><%= link_to "Delete", delete_path(listing), method: :delete %></td>
-      
-  <% end %>
 
- </div>
-<% end %>
+     
+      <%# <% if admin? || author_of(listing) %> %>
+<%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-sm btn-outlined btn-default" %>
+   <%= link_to 'Delete', listing_path(listing),
+            :confirm => 'Are you sure?', :method => :delete %>
+    <% end %>
+
+
+
 
 
 <div>

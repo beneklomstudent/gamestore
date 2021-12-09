@@ -3,6 +3,7 @@ require 'sidekiq/web'
 Rails.application.routes.draw do
   devise_for :users
   resources :listings
+  resources :listings
   authenticate :user, lambda { |u| u.admin? } do
     mount Sidekiq::Web => "/sideqik"
     end
@@ -13,8 +14,9 @@ Rails.application.routes.draw do
   get "/edit", to: "listings#edit"
   get "/show", to: "listings#show"
   get "/test", to: "listings#test"
-  get "/delete", to: "listings#delete"
-  # get "/destroy", to: "listings#delete"
-  delete 'listings/:id', to: 'listing#destroy'
   get "/checkout", to: 'listings#checkout'
-end
+  get "/deletelisting", to: "listing#destroy"
+#  do
+#     delete :destroy, path: 'Delete_listing', as: "destroy"
+  end
+  
