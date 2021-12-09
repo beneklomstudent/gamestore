@@ -11,8 +11,7 @@
      
       <%# <% if admin? || author_of(listing) %> %>
 <%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-sm btn-outlined btn-default" %>
-   <%= link_to 'Delete', listing_path(listing),
-            :confirm => 'Are you sure?', :method => :delete %>
+    <td><%= link_to "show", listing_path(listing) %></td>
     <% end %>
 
 
