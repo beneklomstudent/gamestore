@@ -78,3 +78,4 @@ gem "stripe", "~> 5.41"
 
 gem "webpacker", "~> 5.4"
 gem "dotenv-rails", "~> 2.7"
+gem "rake", "~> 13.0"

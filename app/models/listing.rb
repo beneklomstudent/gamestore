@@ -6,7 +6,10 @@ class Listing < ApplicationRecord
     scope :active, ->{ where(status: "active") }
     scope :inactive, ->{ where(status: "inactive") }
 
-
+    validates :gamename, presence: { message: "Please provide a game name" }
+    # validates :cover, presence: { message: "please provide a cover"}
+    validates :price, presence: { message: "please provide a price"}
+    validates :listingname, presence: { message: "please provide a listing name"}
     def active?
         status == "active"
       end

@@ -57,7 +57,7 @@ end
        # Perform the lookup
        @listing = Listing.find(params[:id])
   begin
-    @post.delete
+    @listing.delete
   end
 end
 
