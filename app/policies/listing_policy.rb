@@ -1,5 +1,5 @@
 class ListingPolicy
-    attr_reader :curren_user, :listing
+    attr_reader :user, :listing
   
     def initialize(current_user, listing)
       @current_user = current_user

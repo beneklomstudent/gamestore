@@ -1,7 +1,7 @@
 class Listing < ApplicationRecord
     belongs_to :user, optional: true
     has_one_attached :cover, dependent: :purge
-  
+    has_many :line_items, dependent: :destroy
 
     scope :active, ->{ where(status: "active") }
     scope :inactive, ->{ where(status: "inactive") }

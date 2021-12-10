@@ -5,7 +5,7 @@ before_action :authenticate_user!
 
 def set_listing
   @listing = Listing.find(params[:id])  
-  # authorize @listing
+ 
 end
 
 def listing_params
@@ -14,13 +14,13 @@ end
 
 def index
     @listings = Listing.active
-    # authorize @listings
+  
 end
 
     def create
       @listing = Listing.new(listing_params)
       @listing.users_id = current_user.id
-      # authorize @listing
+  
       begin
         @listing.save!
         redirect_to action: "index"
@@ -37,7 +37,7 @@ end
   end
 
   def edit
-    # authorize @listing
+    
   end
 
 
@@ -57,7 +57,7 @@ end
        # Perform the lookup
        @listing = Listing.find(params[:id])
   begin
-    @listing.delete
+    @listing.destroy
   end
 end
 

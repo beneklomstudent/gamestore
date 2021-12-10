@@ -5,10 +5,14 @@
 <div id=shadowbox>
 <% if @listing.cover.attached? %>
     <%= image_tag @listing.cover, width: 150 %>
-<% end %>   
- <% if admin? || author_of(@listing) %>
-<%= link_to "Delete", @listing.delete,  data: { confirm: "Are you sure?" } %>
-<% end %>
+    <% end %>
+  <%= button_to "Add #{@listing.gamename} to cart", line_items_path(:listing_id => @listing.id) %>
+
+</div>
+ 
+ <%# <% if admin? || author_of(@listing) %>
+<%# <%= link_to "Delete", @listing.delete,  data: { confirm: "Are you sure?" } %> %>
+<%# <% end %> %> %>
         <%# <%= link_to "Edit", edit_listing_path(@listing) %>
    
     <%# <% if policy(@listing).destroy? %>

@@ -14,6 +14,8 @@ end
          :recoverable, :rememberable, :validatable
 
  has_many :listings, dependent: :destroy 
+ has_many :carts
+
 
 # include DeviseTokenAuth::Concerns::ActiveRecordSupport
 # include DeviseTokenAuth::Concerns::User
@@ -21,8 +23,12 @@ end
     self.add_role(:user) if self.role.nil?
   end
 
-
-
+  def cart 
+    return Cart.find_by(user_id: id, completed: false) || Cart.create(user_id: id, completed: false, price: 0)
+  end
 end
+
+
+
 
 
