@@ -20,7 +20,6 @@ end
     def create
       @listing = Listing.new(listing_params)
       @listing.users_id = current_user.id
-  
       begin
         @listing.save!
         redirect_to action: "index"

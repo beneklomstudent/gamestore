@@ -1,8 +1,8 @@
 <h2>Cart show</h2>
 <ul>
   <% @cart.line_items.each do |line_item| %>
-    <li>Item: <%= line_item.listing.name %>/ Price: <%= number_to_currency(line_item.listing.price) %>/ Quantity: <%= line_item.quantity %>/ Total Price: <%= number_to_currency(line_item.total_price) %>
-    # See lineItem section below for explanation of line_item links
+    <li>Item: <%= line_item.listing.name %>/ Price: <%= number_to_currency(line_item.listing.price) %>
+    / Quantity: <%= line_item.quantity %>/ Total Price: <%= number_to_currency(line_item.total_price) %>
     <ul>
       <li>
         <%= link_to "Add one", line_item_add_path(:id => line_item), method: :post %>
@@ -15,8 +15,7 @@
     #
   <% end %>
 </ul>
-<h3>Sub total: <%= number_to_currency(@cart.sub_total) %></h3>
-# See Order section below for explanation of new_order_path
-<%= link_to "Proceed to checkout", new_order_path %><br>
-#
-<%= link_to "Empty cart", cart_path(@current_cart),method: :delete, data: {confirm: "Are you sure?"}
+<%# <h3>Sub total: <%= number_to_currency(@cart.sub_total) %></h3>
+<%# # See Order section below for explanation of new_order_path %>
+<p><%= link_to "Proceed to checkout", new_order_path %></p>
+<p><%= link_to "Empty cart", cart_path(@current_cart),method: :delete, data: {confirm: "Are you sure?"}  %> </p>

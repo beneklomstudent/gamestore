@@ -7,10 +7,12 @@
  <p> <%= listing.gamename%> </p>
  <p>  <%= listing.genre %> </p>
   <p><%= listing.price %></p>
+<%# <%= button_to "Add #{listing.gamename} to cart", line_items_path(@listing.id) %>
+
 
      
-      <%# <% if admin? || author_of(listing) %> %>
-<%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-sm btn-outlined btn-default" %>
+ <%# <% if admin? || author_of(listing) %> 
+<%=  link_to 'Edit', edit_listing_path(listing), class: "btn btn-sm btn-outlined btn-default" %>
     <td><%= link_to "show", listing_path(listing) %></td>
     <% end %>
 

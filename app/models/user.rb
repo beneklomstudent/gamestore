@@ -14,7 +14,7 @@ end
          :recoverable, :rememberable, :validatable
 
  has_many :listings, dependent: :destroy 
- has_many :carts
+
 
 
 # include DeviseTokenAuth::Concerns::ActiveRecordSupport

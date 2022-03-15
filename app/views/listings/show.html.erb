@@ -6,7 +6,7 @@
 <% if @listing.cover.attached? %>
     <%= image_tag @listing.cover, width: 150 %>
     <% end %>
-  <%= button_to "Add #{@listing.gamename} to cart", line_items_path(:listing_id => @listing.id) %>
+  <%= button_to "Add #{@listing.gamename} to cart", line_items_path(:listing_id, to: @listing.id) %>
 
 </div>
  
