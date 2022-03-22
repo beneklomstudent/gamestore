@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 2021_12_10_002543) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "users_id"
     t.string "listingname"
-    t.integer "price"
+    t.money "price", scale: 2
     t.datetime "expires_at", default: "2022-01-04 04:49:52"
     t.string "status", default: "active"
     t.string "gamename"
@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 2021_12_10_002543) do
 
   create_table "products", force: :cascade do |t|
     t.string "name"
-    t.decimal "price"
+    t.money "price", scale: 2
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

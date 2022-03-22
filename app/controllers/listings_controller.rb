@@ -5,11 +5,11 @@ before_action :authenticate_user!
 
 def set_listing
   @listing = Listing.find(params[:id])  
- 
+
 end
 
 def listing_params
-  params.require(:listing).permit(:listingname, :cover, :price, :gamename, :genre)
+  params.require(:listing_id).permit(:listingname, :cover, :price, :gamename, :genre)
 end 
 
 def index

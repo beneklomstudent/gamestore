@@ -37,3 +37,5 @@ def current_cart
     session[:cart_id] = @current_cart.id
   end
 end
+
+# checks to see if there is an active cart in session, if not it creates one, if yes it loads one

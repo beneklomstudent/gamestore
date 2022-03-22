@@ -4,11 +4,13 @@ Rails.application.routes.draw do
   devise_for :users
   resources :listings
   resources :orders
-
+  
+  resources :line_items
+  # get 'line_items/:id', to: "line_items#create"
   authenticate :user, lambda { |u| u.admin? } do
     mount Sidekiq::Web => "/sideqik"
     end
-    
+  
   root to: 'listings#index'
   get "/index", to: "listings#index"
   get "/new", to: "listings#new"
@@ -18,19 +20,24 @@ Rails.application.routes.draw do
   get "/checkout", to: 'listings#checkout'
   get "/deletelisting", to: "listing#destroy"
   get "/search", to: "listings#search"   
-
   get 'carts/:id', to: "carts#show", as: "cart"
+  get 'cart/', to: "carts#show"
+  # post 'listings/:id', to: "line_items#create"
   delete 'carts/:id', to: "carts#destroy"
 
+  
+  # post 'listings/:listing_id', to: "listings#create"
   # post 'line_items/:id/add', to: "line_items#add_quantity", as: "line_item_add"
   # post 'line_items/:id/reduce', to: "line_items#reduce_quantity", as: "line_item_reduce"
-  get 'line_items', to: "line_items#create"
-  get 'line_items/:id', to: "line_items#show", as: "line_item"
+  # get 'line_items/', to: "line_items#create"
+  # get 'line_items/:id', to: "line_items#show", as: "line_item"
+  # post 'line_items/:id', to: "line_items#create", as: "line_item"
+  # get "line_items/, to: "line_items#create"
   # delete 'line_items/:id', to: "line_items#destroy"
+#   post '/line_item/', to: "line_items#create"
+#  get 'listings/:id', to: "line_items#create", as: ""
 
-
-
-
+# get '/line_items/:id', to: 'line_items#create', as: 'Listing'
 
 
 end
