@@ -3,6 +3,8 @@ class ListingsController < ApplicationController
 before_action :set_listing, only: [:update, :edit, :show, :destroy, :delete]   
 before_action :authenticate_user!
 
+
+
 def set_listing
   @listing = Listing.find(params[:id])  
 
