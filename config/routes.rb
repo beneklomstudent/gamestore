@@ -2,6 +2,8 @@ require 'sidekiq/web'
 
 Rails.application.routes.draw do
   devise_for :users
+  get "/delete_listing", to: 'listings#destroy' 
+ 
   resources :listings
   resources :orders
   get '/line_items/:id', to: 'line_items#create', as: :Listing
@@ -9,7 +11,7 @@ Rails.application.routes.draw do
   authenticate :user, lambda { |u| u.admin? } do
     mount Sidekiq::Web => "/sideqik"
     end
-  
+  post "listings/:id", to: 'line_items#create'
   root to: 'listings#index'
   get "/index", to: "listings#index"
   get "/new", to: "listings#new"
@@ -17,11 +19,11 @@ Rails.application.routes.draw do
   get "/show", to: "listings#show"
   get "/test", to: "listings#test"
   get "/checkout", to: 'listings#checkout'
-  get "/deletelisting", to: "listing#destroy"
+
   get "/search", to: "listings#search"   
   # get 'carts/:id', to: "carts#show", as: "cart"
   get 'cart/', to: "carts#show"
-  delete 'carts/:id', to: "carts#destroy"
+  get 'carts/:id', to: "carts#destroy"
   get '/order/', to: 'orders#show'
   
   # post 'listings/:listing_id', to: "listings#create"

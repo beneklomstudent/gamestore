@@ -21,6 +21,7 @@ class ApplicationController < ActionController::Base
 end
 
 
+# checks to see if there is an active cart in session, if not it creates one, if yes it loads one
 private
 def current_cart
   if session[:cart_id]
@@ -37,5 +38,3 @@ def current_cart
     session[:cart_id] = @current_cart.id
   end
 end
-
-# checks to see if there is an active cart in session, if not it creates one, if yes it loads one

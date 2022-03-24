@@ -11,7 +11,7 @@ def set_listing
 end
 
 def listing_params
-  params.require(:listing_id).permit(:listingname, :cover, :price, :gamename, :genre)
+  params.require(:listing).permit(:listingname, :cover, :price, :gamename, :genre)
 end 
 
 def index
@@ -49,16 +49,13 @@ end
   end
   
 
-  # def delete
-  #   @listing = Listing.find(params[:id])
-  #   render 'delete'
-  # end
 
   def destroy
        # Perform the lookup
        @listing = Listing.find(params[:id])
   begin
     @listing.destroy
+    redirect_to action: "index"
   end
 end
 

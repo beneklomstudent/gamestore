@@ -4,28 +4,20 @@
 
 <% @listings.each do |listing| %>
 <div id="shadowbox">
- <p> <%= listing.listingname %> </p>
+ <p> <%=  listing.listingname %> </p>
  <p> <%= listing.gamename%> </p>
  <p>  <%= listing.genre %> </p>
   <p><%= listing.price %></p>
-  
- <%# <%= link_to "Add #{listing.gamename} to cart", line_item_path(listing)%>  %>
-   
-
-      <%# <%= link_to "Add #{listing.gamename} to cart", line_items_path(:id) %> 
-     <%# <%= button_to "Add #{listing.gamename} to cart", @listing_id  %> 
+  <%# <p><%=image_tag listing.cover, width: 150 %></p> %>
  
-<p> 
-
-<%# <%= link_to 'Add', #{listing.gamename} to cart", buyitem_path(temp) %> 
-<%# <%=  link_to 'Add', buyitem_path(@listing_id), class: "btn btn-sm btn-outlined btn-default" %> 
-<%# <%= button_to "Add #{listing.gamename} to cart", buylisting_path(listing)%> 
-</p>
      
 
- <%# <% if admin? || author_of(listing) %> 
+ <% if admin? || author_of(listing) %>
 <%=  link_to 'Edit', edit_listing_path(listing), class: "btn btn-sm btn-outlined btn-default" %>
-    <td><%= link_to "show", listing_path(listing) %></td>
+<% end %>
+    <td><%= link_to "Show", listing_path(listing) %></td>
+      <%= button_to "Delete", @listing, :method => "delete" %>
+
    
 
   

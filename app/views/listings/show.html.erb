@@ -4,19 +4,23 @@
 <% if @listing.cover.attached? %>
     <%= image_tag @listing.cover, width: 150 %>
     <% end %>
-     <% if admin? || author_of(@listing) %>
-<%= link_to "Delete", @listing.delete,  data: { confirm: "Are you sure?" } %>
+ 
+<%# <%= link_to "Delete", @listing.delete,  data: { confirm: "Are you sure?" } %>
+<%# <%= link_to "Delete", listing_path(@listing), method: :destroy %>
+<p>
+<%# <%= link_to "Add #{@listing.gamename} to cart", line_item_path(@listing) %> 
+<%# <%= button_to "Add #{@listing.gamename} to cart", @line_item, :method => "create" %>
+<%= link_to "Add (+1)", line_items_path(:id => @line_item), method: :post %>
+ <%# <%= button_to "Add #{@listing.gamename} to cart", @line_items.create %> 
+ <%# <% if admin? || author_of(@listing)  %>
+  
   <%= link_to "Edit", edit_listing_path(@listing) %>
+   <% if policy(@listing).destroy? %>
+  <%= button_to "Delete", @listing, :method => "delete" %>
 <% end %>
 <%# <%= link_to "Add #{@listing.gamename} to cart", line_item_path(@listing) %> 
-<%= link_to "Add #{@listing.gamename} to cart", line_item_path(@listing) %> 
-<%# <%= link_to "Add #{@listing.gamename} to cart", line_item_path(:id => line_item), method: :post %>  
-<%# <% link_to "Add (+1)", line_item_add_path(:id => line_item), method: :post %> 
- <%# <%= button_to "Add #{@listing.gamename} to cart", '/line_items/#listing_id'  %> 
- 
- <%# <%= button_to "Add #{@listing.gamename} to cart", line_items_path(:listing_id, to: @listing.id) %>
-    <%# <%= button_to "Add #{@listing.gamename} to cart", 'line_items/:listing_id' %>
-<%# # <%= button_to "Add #{@listing.gamename} to cart", @line_items.create %>
+
+</p>
 
  </div>
  
@@ -24,5 +28,5 @@
       
    
  <%# <% if policy(@listing).destroy? %>
-        <%# <%= link_to "Delete", @listing.destroy %> %> %>
-    <%# <% end %> %>
+        <%# <%= link_to "Delete", @listing.destroy %> 
+    <%# <% end %>
