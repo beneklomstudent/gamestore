@@ -4,11 +4,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :listings
   resources :orders
-
-  # post "listings/:id/"    => "line_items#create"
   post 'line_items/:id/create' => "line_items#create", as: "line_item_create"
   post 'line_items/:id/reduce' => "line_items#reduce_quantity", as: "line_item_reduce"
-  # resources :line_items
   authenticate :user, lambda { |u| u.admin? } do
     mount Sidekiq::Web => "/sideqik"
     end
@@ -20,12 +17,9 @@ Rails.application.routes.draw do
   get "/show", to: "listings#show"
   get "/test", to: "listings#test"
   get "/checkout", to: 'listings#checkout'
-
   get "/search", to: "listings#search"   
-  # get 'carts/:id', to: "carts#show", as: "cart"
-  get 'cart/', to: "carts#show"
-  # get 'carts/:id', to: "carts#destroy"
-  # get '/order/', to: 'orders#show'
+  get '/cart/', to: "carts#show"
+  get 'empty_cart', to: "carts#destroy"
   
 
 

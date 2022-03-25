@@ -6,6 +6,6 @@ module ApplicationHelper
       def admin?
         user_signed_in? && current_user.admin?
       end
-    
+    # //defines the admin/userid status of the user
 
 end

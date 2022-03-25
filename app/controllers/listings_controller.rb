@@ -49,7 +49,7 @@ end
   end
   
 
-
+end
   def destroy
        # Perform the lookup
        @listing = Listing.find(params[:id])
@@ -59,12 +59,4 @@ end
   end
 end
 
-  # def destroy
-  #   @post = Post.find(params[:id])
-  #  begin
-  #   @post.destroy
-  #     end
-   
-  #   end
-
-end
+  

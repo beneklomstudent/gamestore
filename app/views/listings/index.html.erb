@@ -2,19 +2,20 @@
 
 <p>
 
-<% @listings.each do |listing| %>
+<% @listings.index.each do |listing| %>
 <div id="shadowbox">
+<%= listing.status%>
  <p>Listing Name: <%=  listing.listingname %> </p>
  <p>Game Name: <%= listing.gamename%> </p>
  <p> Genre: <%= listing.genre %> </p>
   <p>Price: <%= listing.price %></p>
+  
   <%if listing.cover.attached?%>
   <p><%= image_tag listing.cover, width: 150 %></p> 
   <% end %>
  
     <td><%= link_to "Show", listing_path(listing) %></td>
-      <%# <%= button_to "Delete", @listing, :method => "delete" %>
-
+  
    
 
   
