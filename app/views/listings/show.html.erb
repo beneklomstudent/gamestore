@@ -1,14 +1,9 @@
 
-<%# 
 
-<<<<<<< Updated upstream
-<div id=shadowbox>
-=======
-<div id=shadowbox> %>
+<% <div id=shadowbox> %>
 
 <h1><%= @listing.listingname %></h1>
 <h3>Price:<%= @listing.price %></h3>
->>>>>>> Stashed changes
 <% if @listing.cover.attached? %>
     <%= image_tag @listing.cover, width: 150 %>
     <% end %>
