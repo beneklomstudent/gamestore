@@ -33,14 +33,15 @@ class LineItemsController < ApplicationController
         if current_cart.listings.include?(chosen_product)
           # Find the line_item with the chosen_product
           @line_item = current_cart.line_items.find_by(:listing_id => chosen_product)
-          # Iterate the line_item's quantity by one
+          #add 1 to quantity
           @line_item.quantity += 1
-          redirect_to cart_path
+          redirect_to index_path
           
         else
+          #creates a LineItem object to carry to the cart, which can then be ordered
           @line_item = LineItem.new
           @line_item.cart = current_cart
-          @line_item.listing = chosen_product
+          @line_item.listing  = chosen_product
           redirect_to cart_path
         end
 
@@ -50,22 +51,16 @@ class LineItemsController < ApplicationController
             @line_item.destroy
             redirect_to cart_path(@current_cart)
           end  
-        
-    #     # Save and redirect to cart show path
-    #     @line_item.save
-    #     redirect_to cart_path(current_cart)
-    #   end
-    # def index
-
-    # end
-
-
-    
-     
-      
-      
-
-      
-     
+          
+    #  Save Line Item
+        @line_item.save
+        # redirect_to cart_path(current_cart)
       end
+
+     
+      
+      
+
+      
+    
     end

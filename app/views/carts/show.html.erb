@@ -1,16 +1,10 @@
 <h2>Cart</h2>
 <ul>
-<%# <%= @current_cart.inspect%> <br>
-<%# <%= @current_cart.line_items.inspect%> <br>
-<%# <%= @line_item.inspect%><br>
 
-
-<%# <%= @current_cart.line_items.inspect %> 
   <% @current_cart.line_items.each do |line_item| %>
-    <li>Listing Name: <%= line_item.listing.listingname%> </li>
-    <li>Game: <%= line_item.listing.gamename %> </li>
-       <li>Price: <%= line_item.listing.price %> </li>
-
+    <li>Listing Name: <%= line_item.listing.gamename%> </li>
+    <%# <li>Game: <%= line_item.listing.gamename %> </li>
+       <li>Price: <%= line_item.listing.price %> </li> 
 
 
     <ul>

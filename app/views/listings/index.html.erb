@@ -8,13 +8,10 @@
  <p>Game Name: <%= listing.gamename%> </p>
  <p> Genre: <%= listing.genre %> </p>
   <p>Price: <%= listing.price %></p>
-  <p><%=image_tag listing.cover, width: 150 %></p> 
+  <%if listing.cover.attached?%>
+  <p><%= image_tag listing.cover, width: 150 %></p> 
+  <% end %>
  
-     
-
- <%# <% if admin? || author_of(listing) %>
-<%# <%=  link_to 'Edit', edit_listing_path(listing), class: "btn btn-sm btn-outlined btn-default" %>
-<%# <% end %>
     <td><%= link_to "Show", listing_path(listing) %></td>
       <%# <%= button_to "Delete", @listing, :method => "delete" %>
 
