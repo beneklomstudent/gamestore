@@ -1,5 +1,8 @@
 {
+  "start" : "node app.js",
   "name": "gamestore",
+  
+  
   "private": true,
   "dependencies": {
     "@hotwired/stimulus": "^3.0.1",
