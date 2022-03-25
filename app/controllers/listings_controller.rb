@@ -49,6 +49,7 @@ end
   end
   
 
+<<<<<<< Updated upstream
 end
   def destroy
        # Perform the lookup
@@ -56,7 +57,27 @@ end
   begin
     @listing.destroy
     redirect_to action: "index"
+=======
+  def destroy   
+  #   @listing = Listing.find(params[:listing_id])
+  #   @listing.destroy
+  #  redirect to index(@listing)
+  end
+
+def delete
+    @listing = Listing.find(params[:listing_id])
+    @listing.destroy
+   redirect to index(@listing)
+end
+ 
+ 
+    
+>>>>>>> Stashed changes
   end
 end
 
+<<<<<<< Updated upstream
   
+=======
+end
+>>>>>>> Stashed changes
