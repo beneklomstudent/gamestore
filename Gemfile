@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
+gem 'sassc-rails'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
@@ -79,3 +80,5 @@ gem "stripe", "~> 5.41"
 gem "webpacker", "~> 5.4"
 gem "dotenv-rails", "~> 2.7"
 gem "rake", "~> 13.0"
+
+gem "sassc", "~> 2.4"
