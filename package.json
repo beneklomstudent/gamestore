@@ -23,6 +23,7 @@
   },
   "devDependencies": {},
   "scripts": {
+    "build": "webpack --config prod.config.js",
     "dev": "react-scripts start",
     "start": "serve -s build",
     "build": "react-scripts build",
