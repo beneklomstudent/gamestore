@@ -1,2 +1,3 @@
-web: bin/rails server -p 3000
+
+web:node index.js
 css: yarn build:css --watch
