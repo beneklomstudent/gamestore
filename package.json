@@ -3,10 +3,6 @@
   "version": "1.0.0",
   "description": "A retro gamestore",
   "main": "babel.config.js",
-  // "directories": {
-  //   "lib": "lib",
-  //   "test": "test"
-  },
   "private": true,
   "dependencies": {
     "@hotwired/stimulus": "^3.0.1",
