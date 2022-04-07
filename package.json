@@ -21,7 +21,9 @@
     "webpack-cli": "^3.3.12",
     "yarn": "^1.22.18"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "webpack-dev-server": "^3"
+  },
   "scripts": {
     "dev": "react-scripts start",
     "start": "serve -s build",
