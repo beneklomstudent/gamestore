@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => "/sideqik"
     end
 
-# root to: 'devise/sessions#new'
+
   root to: 'listings#index'
   get "/index", to: "listings#index"
   get "/new", to: "listings#new"
