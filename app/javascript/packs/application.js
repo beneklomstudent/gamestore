@@ -15,4 +15,4 @@ import "stylesheets/application"
 import "controllers"
 import "components/stripe";
 import "../application.css"
-
+import "bootstrap";
