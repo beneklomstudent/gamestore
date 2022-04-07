@@ -1,12 +1,13 @@
-{
+{  "start" : "node app.js",
   "name": "gamestore",
   "version": "1.0.0",
   "description": "A retro gamestore",
   "main": "babel.config.js",
-  "directories": {
-    "lib": "lib",
-    "test": "test"
+  // "directories": {
+  //   "lib": "lib",
+  //   "test": "test"
   },
+  "private": true,
   "dependencies": {
     "@hotwired/stimulus": "^3.0.1",
     "@popperjs/core": "^2.11.0",
@@ -20,6 +21,7 @@
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12",
     "yarn": "^1.22.18"
+    
   },
   "devDependencies": {
     "webpack-dev-server": "^3"
