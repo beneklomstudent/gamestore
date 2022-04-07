@@ -10,9 +10,12 @@ require("channels")
 require("css/application.scss")
 require("trix")
 require("@rails/actiontext")
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
 
 import "stylesheets/application"
 import "controllers"
 import "components/stripe";
 import "../application.css"
-import "bootstrap";
+//  
