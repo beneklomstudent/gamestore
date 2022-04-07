@@ -59,7 +59,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "devise", "~> 4.8"
 
+
 gem "sidekiq", "~> 6.3"
+
+gem 'platform-api'
 
 # gem "tailwindcss-rails", "~> 0.5.1"
 
