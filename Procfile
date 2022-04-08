@@ -1,1 +1,1 @@
-web: bundle exec puma -t 5:5 application.rb -e ${RACK_ENV:-production}
+web: node application.js
