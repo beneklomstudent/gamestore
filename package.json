@@ -24,5 +24,8 @@
   },
   "bugs": {
     "url": "https://github.com/beneklomstudent/gamestore/issues"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3"
   }
 }
