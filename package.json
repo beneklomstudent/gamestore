@@ -1,4 +1,4 @@
-{
+
   "start": "node app.js",
   "name": "gamestore",
   "version": "1.0.0",
