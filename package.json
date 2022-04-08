@@ -3,30 +3,31 @@
   "version": "1.0.0",
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   },
+
   "engines": {
     "node": "16.13.1"
     },
+
     "scripts": {
     
       "start": "serve -s build",
  
       "heroku-postbuild": "npm run build"
       },
+  
   "dependencies": {
     "express": "^4.17.3",
     "webpack": "^4.46.0"
   },
-  "devDependencies": {},
 
   "repository": {
     "type": "git",
     "url": "git+https://github.com/beneklomstudent/gamestore.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+
   "bugs": {
     "url": "https://github.com/beneklomstudent/gamestore/issues"
   },
-  "homepage": "https://github.com/beneklomstudent/gamestore#readme\"
-}
+  "homepage": { "https://github.com/beneklomstudent/gamestore#readme"
+     },
+    
