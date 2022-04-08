@@ -10,14 +10,13 @@
     "@rails/webpacker": "5.4.3",
     "express": "^4.17.3",
     "webpack": "^4.46.0",
-    "webpack-cli": "^3.3.12" 
+    "webpack-cli": "^3.3.12"
   },
-    "scripts": {
-      "code:check": "yarn code:lint && yarn code:format --check",
-      "validate": "run-p --print-label lint typecheck test build",
-      "preversion": "git pull",
-      "postversion": "git push && git push --tags"
-    
+  "scripts": {
+    "code:check": "yarn code:lint && yarn code:format --check",
+    "validate": "run-p --print-label lint typecheck test build",
+    "preversion": "git pull",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
