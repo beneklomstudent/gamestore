@@ -210,6 +210,8 @@ GEM
     rexml (3.2.5)
     rolify (6.0.0)
     rubyzip (2.3.2)
+    sass-rails (6.0.0)
+      sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -292,7 +294,9 @@ DEPENDENCIES
   rails (~> 6.1.4, >= 6.1.4.1)
   rake (~> 13.0)
   rolify (~> 6.0)
+  sass-rails (>= 6)
   sassc (~> 2.4)
+  sassc-rails
   selenium-webdriver
   sidekiq (~> 6.3)
   spring
