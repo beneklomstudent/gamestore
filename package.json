@@ -16,5 +16,8 @@
   },
   "bugs": {
     "url": "https://github.com/beneklomstudent/gamestore/issues"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.9.2"
   }
 }
