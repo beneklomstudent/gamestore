@@ -83,3 +83,4 @@ class PostsController < ApplicationController
       params.require(:post, :game, :price)
     end
 end
+end
