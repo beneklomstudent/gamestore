@@ -1,7 +1,7 @@
 # Note: You must restart bin/webpack-dev-server for changes to take effect
 
 default: &default
- entry: path.resolve(__dirname, 'src') + '/app/javascript/application.js',
+ entry: app/javascript/application.js
   source_path: app/javascript
   source_entry_path: app/javascript/packs
   public_root_path: listings/index.html.erb
