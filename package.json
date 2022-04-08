@@ -2,7 +2,7 @@
   "name": "retrogamestore",
   "version": "1.0.0",
   "description": "A retro game store",
-  "main": "gamestore/index.html.erb",
+  "main": "babel.config.js",
   "directories": {
     "lib": "lib",
     "test": "test"
