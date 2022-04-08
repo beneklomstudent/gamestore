@@ -7,7 +7,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@rails/webpacker": "5.4.3",
     "express": "^4.17.3",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12",
