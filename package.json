@@ -17,11 +17,11 @@
   "devDependencies": {},
   "scripts": {
 "start": "node application.js",
-"build": "react-scripts build",
-"build":"webpack",
-"test": "react-scripts test --env=jsdom",
-"eject": "react-scripts eject",
-"heroku-postbuild": "npm run build"
+// "build": "react-scripts build",
+// "build":"webpack",
+// "test": "react-scripts test --env=jsdom",
+// "eject": "react-scripts eject",
+// "heroku-postbuild": "npm run build"
 
 
 
