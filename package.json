@@ -13,7 +13,7 @@
   },
   "devDependencies": {},
   "scripts": {
-"start": "serve -s build",
+"start": "node application.js",
 "build": "react-scripts build",
 "build":"webpack",
 "test": "react-scripts test --env=jsdom",
