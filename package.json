@@ -1,0 +1,28 @@
+{
+  "name": "retrogamestore",
+  "version": "1.0.0",
+  "description": "A retro game store",
+  "main": "babel.config.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beneklomstudent/gamestore.git"
+  },
+  "keywords": [
+    "retro"
+  ],
+  "author": "Ben Eklom",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beneklomstudent/gamestore/issues"
+  },
+  "homepage": "https://github.com/beneklomstudent/gamestore#readme"
+}
