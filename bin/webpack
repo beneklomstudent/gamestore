@@ -12,6 +12,6 @@ require "webpacker"
 require "webpacker/webpack_runner"
 
 APP_ROOT = File.expand_path("..", __dir__)
-Dir.chdir(APP_ROOT) do
+Dir.chdir(APP_ROOT) dogit add static.json
   Webpacker::WebpackRunner.run(ARGV)
 end
