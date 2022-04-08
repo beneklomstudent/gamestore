@@ -13,7 +13,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
       "start": "node application.js",
       "dev": "react-scripts start",
-"build": "react-scripts build",
+"build": "webpack",
 "eject": "react-scripts eject",
 "heroku-postbuild": "npm run build"
   },
