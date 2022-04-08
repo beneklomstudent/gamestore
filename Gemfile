@@ -84,4 +84,4 @@ gem "webpacker", "~> 5.4"
 gem "dotenv-rails", "~> 2.7"
 gem "rake", "~> 13.0"
 
-# gem "sassc", "~> 2.4"
+gem "sassc", "~> 2.4"
