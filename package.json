@@ -2,7 +2,7 @@
   "name": "retrogamestore",
   "version": "1.0.0",
   "description": "A retro game store",
-  "main": "babel.config.js",
+  "main": "weback.config.json",
   "directories": {
     "lib": "lib",
     "test": "test",
