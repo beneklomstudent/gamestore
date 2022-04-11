@@ -5,7 +5,9 @@
   "main": "babel.config.js",
   "directories": {
     "lib": "lib",
-    "test": "test"
+    "test": "test",
+    "engines": {
+"node": "14.18.1" }
   },
   "dependencies": {
     "webpack": "^5.72.0"
