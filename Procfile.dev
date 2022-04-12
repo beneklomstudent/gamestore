@@ -1,3 +1,0 @@
-
-web:node index.js
-css: yarn build:css --watch
