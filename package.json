@@ -15,7 +15,11 @@
   "devDependencies": {
     "webpack-cli": "^4.9.2"
   },
-  
+
+  "scripts": {
+    "start": "application.js"
+}
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/beneklomstudent/gamestore.git"
