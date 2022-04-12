@@ -5,6 +5,6 @@ require_relative "config/environment"
 run Rails.application
 Rails.application.load_server
 
-module.exports = {
-    mode: 'development',
-  };
+# module.exports = {
+#     mode: 'development',
+#   };
